@@ -1,0 +1,102 @@
+{
+  "project": "ai-learn-19-agent-memory",
+  "seed": 42,
+  "config": {
+    "episodes": 40,
+    "turns": 80,
+    "facts_per_episode": 12,
+    "window": {
+      "exchanges": 6
+    },
+    "vector": {
+      "k": 3,
+      "dim": 512,
+      "embedder": "hashed bag-of-stems"
+    },
+    "summary": {
+      "block": 8,
+      "keep": 2,
+      "budget_words": 60
+    },
+    "hybrid": {
+      "window": 4,
+      "k": 2,
+      "block": 8,
+      "keep": 2,
+      "budget_words": 40
+    }
+  },
+  "summary": {
+    "full_history": {
+      "contain": 1.0,
+      "reader_acc": 0.5896,
+      "ctx_tokens_mean": 964.1,
+      "ctx_tokens_turn_peak": 964.1,
+      "contain_by_distance": {
+        "1-5": 1.0,
+        "6-10": 1.0,
+        "11-20": 1.0,
+        "21-40": 1.0,
+        "41-80": 1.0
+      }
+    },
+    "window": {
+      "contain": 0.0667,
+      "reader_acc": 0.0604,
+      "ctx_tokens_mean": 71.2,
+      "ctx_tokens_turn_peak": 73.6,
+      "contain_by_distance": {
+        "1-5": 1.0,
+        "6-10": 0.1471,
+        "11-20": 0.0,
+        "21-40": 0.0,
+        "41-80": 0.0039
+      }
+    },
+    "vector": {
+      "contain": 0.9563,
+      "reader_acc": 0.7063,
+      "ctx_tokens_mean": 22.5,
+      "ctx_tokens_turn_peak": 28.1,
+      "contain_by_distance": {
+        "1-5": 0.9231,
+        "6-10": 0.8824,
+        "11-20": 0.8594,
+        "21-40": 0.9604,
+        "41-80": 0.9922
+      }
+    },
+    "summary": {
+      "contain": 0.4854,
+      "reader_acc": 0.4729,
+      "ctx_tokens_mean": 56.4,
+      "ctx_tokens_turn_peak": 141.4,
+      "contain_by_distance": {
+        "1-5": 0.6538,
+        "6-10": 0.6471,
+        "11-20": 0.625,
+        "21-40": 0.6139,
+        "41-80": 0.3608
+      }
+    },
+    "hybrid": {
+      "contain": 0.9583,
+      "reader_acc": 0.7229,
+      "ctx_tokens_mean": 89.4,
+      "ctx_tokens_turn_peak": 95.7,
+      "contain_by_distance": {
+        "1-5": 1.0,
+        "6-10": 0.8824,
+        "11-20": 0.9062,
+        "21-40": 0.9901,
+        "41-80": 0.9647
+      }
+    }
+  },
+  "plots": [
+    "recall_vs_distance.svg",
+    "recall_vs_reader.svg",
+    "token_budget.svg"
+  ],
+  "runtime_s": 0.799
+}
